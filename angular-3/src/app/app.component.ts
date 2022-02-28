@@ -8,7 +8,7 @@ import { Construction } from './model/construction';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
 }
 list$: Observable < Construction[] > = this.constructionService.getAll();
