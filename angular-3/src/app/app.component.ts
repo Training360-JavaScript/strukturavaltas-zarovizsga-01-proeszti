@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
     private constructionService: ConstructionService,
   ) { }
   onDelete(id: number) {
-    this.constructionService.remove(Construction[]).subscribe(() => {
+    this.constructionService.remove(Construction).subscribe(() => {
       this.list$ = this.constructionService.getAll();
     });
   }
