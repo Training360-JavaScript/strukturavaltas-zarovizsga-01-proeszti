@@ -1,3 +1,4 @@
+import { DrugService } from './service/drug.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'drugstore';
+  list$: Observable<Drugs[]> = this.constructionService.getAll();
 }
+
+constructor(
+  private drugService: DrugService,
+) { }
