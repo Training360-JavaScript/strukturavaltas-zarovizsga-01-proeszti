@@ -8,20 +8,18 @@ import { Construction } from './model/construction';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
-  [x: string]: any;
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  }
-  list$: Observable<Construction[]> = this.constructionService.getAll();
-  title = 'angular-3';
+export class AppComponent {
 
-  constructor(
-    private constructionService: ConstructionService,
-  ) { }
-  onDelete(id: number) {
-    this.constructionService.remove(Construction).subscribe(() => {
-      this.list$ = this.constructionService.getAll();
-    });
-  }
+}
+list$: Observable < Construction[] > = this.constructionService.getAll();
+title = 'angular-3';
+
+constructor(
+  private constructionService: ConstructionService,
+) { }
+onDelete(construction: Construction) {
+  this.constructionService.remove(construction.id).subscribe(() => {
+    this.list$ = this.constructionService.getAll();
+  });
+}
 }

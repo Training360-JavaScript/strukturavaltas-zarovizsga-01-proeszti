@@ -30,7 +30,7 @@ export class ConstructionService {
     return this.http.patch(`${this.apiUrl}/${construction.id}`, construction);
   }
 
-  remove(id: number): Observable<any> {
-    return this.http.delete(`${this.apiUrl}`);
+  remove(construction: Construction): Observable<any> {
+    return this.http.delete(${ this.apiUrl } / ${ id });
   }
 }
